@@ -1,0 +1,71 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 76px);
+  background-color: #f6f2f6;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.register-form {
+  background-color: #ffffff;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.register-form h2 {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.register-form tui-textfield {
+  width: 100%;
+}
+
+.register-form input[tuiInput] {
+  background-color: #f5f5f5;
+  color: #222;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.register-form input[tuiInput]::placeholder {
+  color: #888;
+}
+
+.register-form button[tuiButton] {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.register-form .error {
+  color: #e74c3c;
+  font-size: 14px;
+  text-align: center;
+}
+
+.register-form .login-link {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 12px;
+  color: #555;
+}
+
+.register-form .login-link a {
+  color: #1e88e5;
+  text-decoration: none;
+}
+
+.register-form .login-link a:hover {
+  text-decoration: underline;
+}

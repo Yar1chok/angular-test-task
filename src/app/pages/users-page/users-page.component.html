@@ -1,0 +1,45 @@
+<div class="users">
+  <div *ngIf="users().length === 0" class="users-empty">Данных о пользователях нет</div>
+  <div *ngFor="let user of users()" class="users__block">
+    <div class="card-wrapper" (click)="goToUserDetail(user.id)" style="cursor: pointer">
+      <tui-avatar [src]="user.avatar | tuiFallbackSrc : '@tui.user' | async" class="card-avatar">
+        {{ user.first_name[0] }}{{ user.last_name[0] }}
+      </tui-avatar>
+
+      <div class="card-info">
+        <h2 class="card-name">{{ user.first_name }} {{ user.last_name }}</h2>
+        <div class="card-email">{{ user.email }}</div>
+      </div>
+
+      <div class="card-accessories">
+        <tui-badge appearance="default" size="m">User</tui-badge>
+      </div>
+
+      <button
+        size="s"
+        tuiButton
+        type="button"
+        class="card-delete-btn"
+        (click)="deleteUser(user); $event.stopPropagation()"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="users-pagination">
+  <tui-pager
+    [count]="totalPages()"
+    [index]="page() - 1"
+    (indexChange)="goToPage($event)"
+    class="pager"
+  ></tui-pager>
+
+  <div class="pager-buttons">
+    <button size="xs" tuiButton type="button" (click)="prev()">Prev</button>
+    <button size="xs" tuiButton type="button" class="tui-space_left-3" (click)="next()">
+      Next
+    </button>
+  </div>
+</div>

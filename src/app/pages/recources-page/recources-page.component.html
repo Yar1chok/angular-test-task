@@ -1,0 +1,20 @@
+<div class="resources">
+  <div *ngFor="let r of resources()" class="resource-card" [style.background]="r.color">
+    <h3>{{ r.name }}</h3>
+    <p>Year: {{ r.year }}</p>
+    <p>Pantone: {{ r.pantone_value }}</p>
+  </div>
+</div>
+
+<div class="resources-pagination tui-space_top-3">
+  <tui-pager
+    [count]="totalPages()"
+    [index]="page() - 1"
+    (indexChange)="goToPage($any($event))"
+  ></tui-pager>
+
+  <div class="pager-buttons tui-space_top-3">
+    <button size="xs" tuiButton type="button" (click)="prev()">Prev</button>
+    <button size="xs" tuiButton type="button" (click)="next()">Next</button>
+  </div>
+</div>

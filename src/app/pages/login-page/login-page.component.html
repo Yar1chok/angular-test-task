@@ -1,0 +1,21 @@
+<div class="login-container">
+  <form [formGroup]="form" (ngSubmit)="submit()" class="login-form">
+    <h2>Авторизация</h2>
+
+    <tui-textfield>
+      <input tuiInput formControlName="email" placeholder="Email" />
+    </tui-textfield>
+
+    <tui-textfield>
+      <input tuiInput formControlName="password" type="password" placeholder="Password" />
+    </tui-textfield>
+
+    <button tuiButton type="submit" [disabled]="form.invalid">Войти</button>
+
+    <div *ngIf="error()" class="error">{{ error() }}</div>
+
+    <div class="register-link">
+      Нет аккаунта? <a style="cursor: pointer" (click)="goToRegister()">Зарегистрироваться</a>
+    </div>
+  </form>
+</div>

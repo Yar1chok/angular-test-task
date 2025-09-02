@@ -1,0 +1,40 @@
+<tui-root *ngIf="user() as u">
+  <div tuiWrapper class="user-card tui-shadow_s tui-rounded_m">
+    <button tuiButton size="s" appearance="secondary" class="back-btn" (click)="goBack()">
+      ← Страница пользователей
+    </button>
+
+    <div class="user-header">
+      <tui-avatar [src]="u.avatar || '/assets/icons/default-avatar.svg'" size="m"></tui-avatar>
+      <div class="user-info">
+        <h3>{{ u.first_name }} {{ u.last_name }}</h3>
+        <p class="email">{{ u.email }}</p>
+      </div>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="save()" class="user-form">
+      <label tuiLabel>
+        First Name
+        <tui-textfield>
+          <input tuiInput formControlName="first_name" placeholder="First Name" size="m" />
+        </tui-textfield>
+      </label>
+
+      <label tuiLabel>
+        Last Name
+        <tui-textfield>
+          <input tuiInput formControlName="last_name" placeholder="Last Name" size="m" />
+        </tui-textfield>
+      </label>
+
+      <label tuiLabel>
+        Email
+        <tui-textfield>
+          <input tuiInput type="email" formControlName="email" placeholder="Email" size="m" />
+        </tui-textfield>
+      </label>
+
+      <button tuiButton size="m" appearance="primary" type="submit">Save</button>
+    </form>
+  </div>
+</tui-root>

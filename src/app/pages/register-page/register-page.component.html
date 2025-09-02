@@ -1,0 +1,26 @@
+<div class="register-container">
+  <form [formGroup]="form" (ngSubmit)="submit()" class="register-form">
+    <h2>Регистрация</h2>
+
+    <tui-textfield>
+      <input tuiInput formControlName="username" placeholder="Username" />
+    </tui-textfield>
+
+    <tui-textfield>
+      <input tuiInput formControlName="email" placeholder="Email" />
+    </tui-textfield>
+
+    <tui-textfield>
+      <input tuiInput formControlName="password" type="password" placeholder="Password" />
+    </tui-textfield>
+
+    <button tuiButton type="submit" [disabled]="form.invalid">Register</button>
+
+    <div *ngIf="error" class="error">{{ error }}</div>
+
+    <div class="login-link">
+      Уже есть аккаунт?
+      <a style="cursor: pointer" (click)="goToLogin()">Войти</a>
+    </div>
+  </form>
+</div>

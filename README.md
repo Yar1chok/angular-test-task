@@ -1,59 +1,89 @@
-# TestTask
+# Test Task — Angular Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
+## Описание
 
-## Development server
+Приложение демонстрирует работу с API [reqres.in](https://reqres.in/).  
+Реализован фронтенд на **Angular 20+** с использованием **standalone компонентов**, **сигналов** и **Taiga UI**.
 
-To start a local development server, run:
+Функционал:
 
-```bash
-ng serve
-```
+- Страница списка пользователей (`GET https://reqres.in/api/users?page=2`)
+  - Удаление пользователя (`DELETE https://reqres.in/api/users/:id`)
+  - Пагинация
+- Страница подробной карточки пользователя (`GET https://reqres.in/api/users/:id`)
+  - Редактирование данных пользователя (`PUT https://reqres.in/api/users/:id`)
+- Страница списка ресурсов (`GET https://reqres.in/api/unknown`)
+- Страницы авторизации (`POST https://reqres.in/api/login`) и регистрации (`POST https://reqres.in/api/register`)
+- Покрытие кода тестами (Karma + Jasmine)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Структура проекта
 
-## Code scaffolding
+src/app/
+├─ entities/
+│ ├─ auth/ # Модели и API для авторизации
+│ ├─ user/ # Модели и API для пользователей
+│ └─ resource/ # Модели и API для ресурсов
+├─ pages/
+│ ├─ users-page/ # Список пользователей
+│ ├─ user-detail-page/ # Детальная информация о пользователе
+│ ├─ recources-page/ # Список ресурсов
+│ ├─ login-page/ # Авторизация
+│ └─ register-page/ # Регистрация
+├─ shared/
+└─ app.component.ts # Корневой компонент
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Технологии
 
-```bash
-ng generate component component-name
-```
+- Angular 20+
+- TypeScript
+- Taiga UI (`TuiButton`, `TuiTextfield`, `TuiPager` и др.)
+- RxJS (HTTP запросы)
+- Сигналы Angular (`signal`)
+- Reactive Forms
+- Karma + Jasmine для юнит-тестов
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Установка и запуск
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+# Установка зависимостей
 
 ```bash
-ng e2e
+npm install
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+# Запуск приложения
 
-## Additional Resources
+```bash
+npm start
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Приложение будет доступно по адресу: http://localhost:4200
+
+# Сборка
+
+```bash
+npm run build
+```
+
+# Тесты
+
+Запуск всех тестов:
+
+```bash
+npm test
+```
+
+# Тесты используют Karma + Jasmine, покрывают компоненты:
+
+LoginPageComponent
+RegisterPageComponent
+UsersPageComponent
+UserDetailPageComponent
+ResourcesPageComponent
+
+# Примеры функционала:
+
+Переход на страницу пользователя при клике на карточку
+Удаление пользователя из списка
+Изменение данных пользователя на странице детали
+Пагинация пользователей и ресурсов
+Валидация форм регистрации и авторизации
