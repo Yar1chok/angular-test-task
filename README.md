@@ -18,19 +18,21 @@
 
 ## Структура проекта
 
+```
 src/app/
 ├─ entities/
-│ ├─ auth/ # Модели и API для авторизации
-│ ├─ user/ # Модели и API для пользователей
-│ └─ resource/ # Модели и API для ресурсов
+│  ├─ auth/          # Модели и API для авторизации
+│  ├─ user/          # Модели и API для пользователей
+│  └─ resource/      # Модели и API для ресурсов
 ├─ pages/
-│ ├─ users-page/ # Список пользователей
-│ ├─ user-detail-page/ # Детальная информация о пользователе
-│ ├─ recources-page/ # Список ресурсов
-│ ├─ login-page/ # Авторизация
-│ └─ register-page/ # Регистрация
+│  ├─ users-page/        # Список пользователей
+│  ├─ user-detail-page/  # Детальная информация о пользователе
+│  ├─ recources-page/    # Список ресурсов
+│  ├─ login-page/        # Авторизация
+│  └─ register-page/     # Регистрация
 ├─ shared/
-└─ app.component.ts # Корневой компонент
+└─ app.component.ts      # Корневой компонент
+```
 
 ## Технологии
 
@@ -74,16 +76,16 @@ npm test
 
 # Тесты используют Karma + Jasmine, покрывают компоненты:
 
-LoginPageComponent
-RegisterPageComponent
-UsersPageComponent
-UserDetailPageComponent
-ResourcesPageComponent
+- LoginPageComponent
+- RegisterPageComponent
+- UsersPageComponent
+- UserDetailPageComponent
+- ResourcesPageComponent
 
 # Примеры функционала:
 
-Переход на страницу пользователя при клике на карточку
-Удаление пользователя из списка
-Изменение данных пользователя на странице детали
-Пагинация пользователей и ресурсов
-Валидация форм регистрации и авторизации
+- Переход на страницу пользователя при клике на карточку
+- Удаление пользователя из списка
+- Изменение данных пользователя на странице детали
+- Пагинация пользователей и ресурсов
+- Валидация форм регистрации и авторизации
